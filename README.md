@@ -5,12 +5,15 @@ Very simple loger for NodeJS.
 ## Documentation
 
 ```javascript
+const path = require('path')
 const {createLoger} = require('@fczbkk/loger')
+
 const loger = await createLoger({
     logPath: path.resolve(__dirname, 'logs/history.log'),
     maxLines: 10, // optional
     useConsole: true // optional
 })
+
 await loger.log('something happened')
 ```
 

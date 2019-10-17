@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "dependencies": {
-    "mkdirp": "^0.5.1"
+    "fs-extra": "^8.1.0"
   }
 }

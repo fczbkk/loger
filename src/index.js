@@ -1,8 +1,6 @@
-const fs = require('fs').promises
+const fs = require('fs-extra')
 const path = require('path')
 const util = require('util')
-const mkdirp = require('mkdirp')
-const mkdirpPromise = util.promisify(mkdirp)
 
 const MAX_LINES = 1000
 
@@ -43,7 +41,7 @@ async function createLoger (options = {}) {
     throw new Error('Path is required')
   }
 
-  await mkdirpPromise(path.dirname(logPath))
+  await fs.ensureFile(logPath)
 
   return {
     async log (input) {
